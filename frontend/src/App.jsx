@@ -13,18 +13,22 @@ import AddBlog from "./adminDashboard/pages/AddBlog";
 
 function App() {
   const MainLayout = () => {
-    <>
-      <Navbar />
-      <Outlet />
-      <Footer />
-    </>;
+    return (
+      <>
+        <Navbar />
+        <Outlet />
+        <Footer />
+      </>
+    );
   };
   const AdminLayout = () => {
-    <>
-      <AdminNavbar />
-      <Outlet />
-      <AdminFooter />
-    </>;
+    return (
+      <>
+        <AdminNavbar />
+        <Outlet />
+        <AdminFooter />
+      </>
+    );
   };
 
   const router = createBrowserRouter([
