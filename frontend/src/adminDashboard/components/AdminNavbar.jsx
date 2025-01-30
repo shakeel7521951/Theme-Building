@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 const AdminNavbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false); // State for mobile menu
+  const [isScrolled, setIsScrolled] = useState(false);
 
   // Toggle dropdown visibility
   const toggleDropdown = () => {
@@ -25,13 +26,31 @@ const AdminNavbar = () => {
       document.removeEventListener("click", closeDropdownOnClickOutside);
   }, []);
 
+  // Scroll event listener
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   // Toggle mobile menu visibility
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
   return (
-    <nav className="flex sticky top-0 items-center justify-between !px-4 !py-3 bg-black text-white shadow-md relative z-10">
+    <nav
+      className={`flex sticky top-0 items-center justify-between !px-4 !py-3 bg-black text-white shadow-md  z-10  ${
+        isScrolled ? "bg-transparent" : "bg-black"
+      }`}
+    >
       {/* Logo */}
       <div className="flex items-center">
         <img
@@ -64,7 +83,7 @@ const AdminNavbar = () => {
       </button>
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-[#ff2359] text-white transform ${
+        className={`fixed top-0 right-0 h-full w-64 bg-[#000] text-white transform ${
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-300 md:hidden`}
       >

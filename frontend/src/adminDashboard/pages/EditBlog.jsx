@@ -44,6 +44,7 @@ const EditBlog = ({ blogs, setBlogs }) => {
                   setEditedBlog({ ...editedBlog, title: e.target.value })
                 }
                 className="w-full !p-2 rounded bg-[#1c1d1e] text-white !mt-1"
+                required
               />
             </div>
             <div className="mb-4">
@@ -58,6 +59,7 @@ const EditBlog = ({ blogs, setBlogs }) => {
                 }
                 className="w-full !p-2 rounded bg-[#1c1d1e] text-white !mt-1"
                 rows="5"
+                required
               />
             </div>
             <div className="mb-4">
@@ -86,6 +88,7 @@ const EditBlog = ({ blogs, setBlogs }) => {
                   setEditedBlog({ ...editedBlog, author: e.target.value })
                 }
                 className="w-full !p-2 rounded bg-[#1c1d1e] text-white !mt-1"
+                required
               />
             </div>
             <div className="btns w-full flex gap-4 justify-center">
