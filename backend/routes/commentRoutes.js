@@ -6,6 +6,6 @@ const commentRouter = express.Router();
 
 commentRouter.post("/add/:id", authenticate, addComment);
 
-commentRouter.delete("/:id", authenticate, deleteComment);
+commentRouter.delete("/delete/:id", authenticate, deleteComment);
 
 export default commentRouter;
