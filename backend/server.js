@@ -6,6 +6,7 @@ import userRouter from "./routes/userRoutes.js";
 import blogRouter from "./routes/blogRoutes.js";
 import commentRouter from "./routes/commentRoutes.js";
 import cookieParser from "cookie-parser";
+import stockRouter from "./routes/stockRoutes.js";
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ app.use(express.static(path.resolve("./public")));
 app.use("/api/user", userRouter);
 app.use("/api/blog", blogRouter);
 app.use("/api/comment", commentRouter);
+app.use("/api/stock", stockRouter);
 
 app.listen(PORT, () => {
   dbConnect();

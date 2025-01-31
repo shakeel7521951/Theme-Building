@@ -17,14 +17,32 @@ const blogSchema = new Schema(
       required: true,
       default: "",
     },
+    category: {
+      type: String,
+      required: true,
+      enum: [
+        "Technology",
+        "Health",
+        "Lifestyle",
+        "Education",
+        "Business",
+        "Other",
+      ], // Example categories
+      default: "Other",
+    },
     createdBy: {
       type: Schema.Types.ObjectId,
       ref: "User",
     },
+    comments: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Comment",
+      },
+    ],
   },
   { timestamps: true }
 );
 
 const Blog = mongoose.model("Blog", blogSchema);
-
 export default Blog;
