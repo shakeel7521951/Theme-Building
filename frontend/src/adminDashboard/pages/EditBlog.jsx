@@ -25,8 +25,8 @@ const EditBlog = ({ blogs, setBlogs }) => {
   };
 
   return (
-    <div className="main bg-[#1e3a4c] !p-4 flex flex-col items-center w-full">
-      <div className="!p-6 bg-[#092734] border border-[#51afb2] text-white mt-4 w-full md:w-[35%] mx-auto rounded-3xl shadow-md">
+    <div className="main bg-[#000] !p-4 flex flex-col items-center w-full">
+      <div className="!p-6 bg-gray-800 border border-black text-white mt-4 w-full md:w-[35%] mx-auto rounded-3xl shadow-md">
         <h2 className="text-center text-xl mb-4 text-white font-bold">
           Edit Blog
         </h2>
@@ -94,13 +94,13 @@ const EditBlog = ({ blogs, setBlogs }) => {
             <div className="btns w-full flex gap-4 justify-center">
               <button
                 type="submit"
-                className="bg-[#51afb2] !px-4 !py-2 rounded hover:bg-[#3a8d90] cursor-pointer"
+                className="bg-gray-700 rounded-md !px-3 !py-1 text-white cursor-pointer transition-all duration-300 ease-in-out hover:bg-gray-600 shadow-md hover:shadow-lg"
               >
                 Update Blog
               </button>
               <button
                 type="button"
-                className="ml-2 bg-red-500 !px-4 !py-2 rounded hover:bg-red-700 cursor-pointer"
+                className="bg-red-600 rounded-md !px-3 !py-1 text-white cursor-pointer transition-all duration-300 ease-in-out hover:bg-red-500 shadow-md hover:shadow-lg"
                 onClick={() => navigate("/admin")}
               >
                 Cancel
